@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Realm²</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom right, #010b14, #081424);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3rem;
+      background: linear-gradient(to right, #4ade80, #38bdf8);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .hero i {
+      color: #4ade80;
+      font-size: 3rem;
+      animation: pulse 1s infinite alternate;
+    }
+    .links a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      background: linear-gradient(to right, #4ade80, #38bdf8);
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+    .links a:hover { transform: scale(1.05); }
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid #38bdf8;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 2rem auto;
+      max-width: 800px;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+    .steps li {
+      list-style: none;
+      margin: 1rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+    .roadmap .phase {
+      margin-top: 1rem;
+      font-weight: bold;
+      color: #38bdf8;
+    }
+    .chart ul {
+      list-style: none;
+      padding: 0;
+    }
+    .chart li {
+      margin: 0.5rem 0;
+    }
+    .timer {
+      font-family: monospace;
+      font-size: 1.25rem;
+      color: #ccc;
+    }
+    @keyframes pulse {
+      from { transform: scale(1); }
+      to { transform: scale(1.1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <i class="fas fa-leaf"></i>
+    <h1>Realm²</h1>
+    <p>The Eco-Crypto Revolution</p>
+    <p style="color: #ccc;">🌱 Invest in Realm², the crypto token turning sustainability into profitability! 🌍</p>
+  </div>
+
+  <div class="links">
+    <a href="https://pump.fun/#realm2" target="_blank">🚀 Buy on Pump.fun</a>
+    <a href="https://x.com/Realm2RWA" target="_blank">🐦 Share on X</a>
+    <a href="https://t.me/realm2" target="_blank">💬 Join Telegram</a>
+  </div>
+
+  <div class="card">
+    <div class="section-title">Investment Phase</div>
+    <div>Goal: $2M Market Cap</div>
+    <div class="timer" id="countdown">Loading...</div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">How it Works</div>
+    <ul class="steps">
+      <li><i class="fas fa-coins text-green-400"></i> Buy Realm²: Get tokens from Pump.fun</li>
+      <li><i class="fas fa-seedling text-green-400"></i> Stake: Your stake funds tree planting</li>
+      <li><i class="fas fa-certificate text-green-400"></i> Receive RealmO²: Carbon offset proof</li>
+      <li><i class="fas fa-building text-green-400"></i> Sell to Companies: Offset emissions</li>
+    </ul>
+  </div>
+
+  <div class="card roadmap">
+    <div class="section-title">Roadmap</div>
+    <div class="phase">Q2 2025</div>
+    <div>Launch on Pump.fun, website, outreach</div>
+    <div class="phase">Q3–Q4 2025</div>
+    <div>Start staking, reforestation, RealmO², carbon marketplace</div>
+    <div class="phase">2026</div>
+    <div>Partnerships, multichain, DAO, ecosystem</div>
+  </div>
+
+  <div class="card chart">
+    <div class="section-title">Distribution</div>
+    <ul>
+      <li><span style="color:#4ade80">■</span> Team: 4%</li>
+      <li><span style="color:#38bdf8">■</span> Land Rental & Purchase: 6%</li>
+      <li><span style="color:#22c55e">■</span> Investors: 90%</li>
+    </ul>
+  </div>
+
+  <script>
+    const launchDate = new Date("2025-09-01T00:00:00");
+    const el = document.getElementById("countdown");
+    setInterval(() => {
+      const now = new Date();
+      const diff = launchDate - now;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const mins = Math.floor((diff / (1000 * 60)) % 60);
+      const secs = Math.floor((diff / 1000) % 60);
+      el.textContent = `${days}d ${hours}h ${mins}m ${secs}s`;
+    }, 1000);
+  </script>
+</body>
+</html>
